@@ -53,6 +53,6 @@ request.get('http://db.chezalex.net/dbdatabase.csv', function (error, response, 
 
 function listen(){
 	console.log('listening on port ' + port)
-	//app.listen(port, host);
-	app.listen();
+	app.listen(port, host);
+	// app.listen();
 }
