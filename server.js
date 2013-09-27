@@ -1,11 +1,14 @@
 var records = [];
 var host = "127.0.0.1";
-var port = 80;
+var port = process.env.port || 8080;
 var express = require("express");
 var request = require('request');
 var csv = require('csv');
+var http = require('http');
 
 var app = express();
+var server = http.createServer(app);
+
 app.use(app.router); //use both root and other routes below
 app.use(express.static(__dirname + '/public')); //use static files in ROOT/public folder
 
@@ -53,5 +56,6 @@ request.get('http://db.chezalex.net/dbdatabase.csv', function (error, response, 
 
 function listen(){
 	//app.listen(port, host);
-	app.listen(port,  host);
+	server.listen(port);
+	console.log("listening %d", server.address().port)
 }
