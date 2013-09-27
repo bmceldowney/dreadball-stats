@@ -1,6 +1,6 @@
 var records = [];
 var host = "127.0.0.1";
-var port = 8080;
+var port = process.env.port || 8080;
 var express = require("express");
 var request = require('request');
 var csv = require('csv');
@@ -55,7 +55,13 @@ request.get('http://db.chezalex.net/dbdatabase.csv', function (error, response, 
 });
 
 function listen(){
+<<<<<<< HEAD
 	//app.listen(port, host);
-	server.listen();
+	server.listen(port);
 	console.log("listening %d", server.address().port)
+=======
+	console.log('listening on port ' + port)
+	app.listen(port, host);
+	// app.listen();
+>>>>>>> 7d7ef9c0e1c8ba7b9a715f3be7e6660829d1d342
 }
