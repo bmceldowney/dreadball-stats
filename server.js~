@@ -1,14 +1,13 @@
 var records = [];
 var host = "127.0.0.1";
-var port = process.env.port || 8080;
+var port = 8080;//process.env.PORT || 8080;
 var express = require("express");
 var request = require('request');
 var csv = require('csv');
-var http = require('http');
 
 var app = express();
-var server = http.createServer(app);
 
+app.use(express.logger());
 app.use(app.router); //use both root and other routes below
 app.use(express.static(__dirname + '/public')); //use static files in ROOT/public folder
 
@@ -21,6 +20,7 @@ app.get("/games", function(request, response){
 });
 
 request.get('http://db.chezalex.net/dbdatabase.csv', function (error, response, body) {
+	debugger;
 	if (!error && response.statusCode == 200) {
         // Continue with your processing here.
         csv().from.string(body)
@@ -44,24 +44,19 @@ request.get('http://db.chezalex.net/dbdatabase.csv', function (error, response, 
 					record.visinj = item[13];
 					record.teamwon = item[14];
 					record.teamlost = item[15];
-					
+					debugger;	
 					records.push(record);
 				}
 			});
-
+			debugger;
 			listen();
 		});
 	}
 });
-
+debugger;
 function listen(){
-<<<<<<< HEAD
-	//app.listen(port, host);
-	server.listen(port);
-	console.log("listening %d", server.address().port)
-=======
-	console.log('listening on port ' + port)
-	app.listen(port, host);
-	// app.listen();
->>>>>>> 7d7ef9c0e1c8ba7b9a715f3be7e6660829d1d342
+	debugger;
+	app.listen(port, host, function(){
+		console.log("listening %d", port)
+	});
 }
