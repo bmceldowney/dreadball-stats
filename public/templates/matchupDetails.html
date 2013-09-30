@@ -1,0 +1,25 @@
+﻿<div class="details" ng-animate="'details'" ng-show="details">
+    <header>
+        <div class="detail-label">Matchup details:</div>
+        <span class="detail-value" ng-bind="details.data.name"></span>
+    </header>
+    <div class="detail-container">
+        <div class="detail-label">avg win spread:</div>
+        <span class="detail-value" ng-bind="details.data.avgWinScore"></span>
+        <div class="detail-label">avg loss spread:</div>
+        <span class="detail-value" ng-bind="details.data.avgLossScore"></span>
+        <div class="detail-label">games won:</div>
+        <!--<span class="detail-value" ng-bind="details.data.won.length"></span>-->
+        <span class="detail-value" ng-bind="winPercentage"></span>
+        <div class="detail-label">games lost:</div>
+        <!--<span class="detail-value" ng-bind="details.data.lost.length"></span>-->
+        <span class="detail-value" ng-bind="losePercentage"></span>
+        <div class="detail-label">games drawn:</div>
+        <!--<span class="detail-value" ng-bind="details.data.draw.length"></span>-->
+        <span class="detail-value" ng-bind="drawPercentage"></span>
+    </div>
+    <div class="pie-container">
+        <div pie-chart data-game-data="winLossData" data-options="winLossOptions"></div>
+        <div pie-chart data-game-data="homeAwayData" data-options="homeAwayOptions"></div>
+    </div>
+</div>

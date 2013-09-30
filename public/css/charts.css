@@ -1,0 +1,199 @@
+﻿html {
+    height: 100%;
+    background-color: dimgray;
+}
+
+body {
+    font: 10px sans-serif;
+    width: 700px;
+}
+
+.team-details {
+    float: left;
+    clear: both;
+    padding: 10px;
+    background-color: honeydew;
+    border-radius: 5px;
+    /*border-color: black;
+    border-style: solid;
+    border-width: 1px;*/
+}
+
+.details {
+    clear: both;
+    margin-top: 10px;
+    background-color: honeydew;
+    padding: 10px;
+    border-radius: 5px;
+    /*border-width: 1px;
+    border-color: black;
+    border-style: solid;*/
+}
+
+.details, .chart {
+    float: left;
+    width: 670px;
+}
+
+    .chart .selected {
+        background-color: mintcream;
+        outline-width: 1px;
+        outline-style: solid;
+        outline-color: darkseagreen;
+    }
+
+    .chart .container:hover {
+        background-color: honeydew;
+        outline-style: solid;
+        outline-width: 1px;
+        outline-color: darkgreen;
+    }
+
+    .chart .container {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .chart .wonBar, .chart .lostBar, .chart .drawBar {
+        font: 10px sans-serif;
+        text-align: right;
+        padding: 3px;
+        margin: 1px 0px 1px 0px;
+        color: white;
+        float: left;
+        cursor: default;
+    }
+
+    .chart .label {
+        width: 70px;
+        float: left;
+        text-align: right;
+        padding: 4px;
+        cursor: default;
+    }
+
+select {
+    clear: both;
+    margin: 10px;
+}
+
+.details-show-setup, .details-hide-setup {
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -ms-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
+    transition: all linear 0.3s;
+}
+
+.details-show-setup {
+    opacity: 0;
+    height: 0;
+}
+
+    .details-show-setup.details-show-start {
+        opacity: 1;
+        height: 100px;
+    }
+
+.details-hide-setup {
+    opacity: 1;
+    height: 0;
+}
+
+    .details-hide-setup.details-hide-start {
+        opacity: 0;
+        height: 100px;
+    }
+
+.ui-button.filter-button {
+    font-size: .9em;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    float: right;
+}
+
+.detail-container {
+    float: left;
+    margin-top: 5px;
+    clear: both;
+}
+
+.team-stats {
+    float: left;
+}
+
+.pie-container {
+    float: right;
+    margin-bottom: 15px;
+}
+
+div[pie-chart] {
+    float: left;
+}
+
+.detail-label {
+    width: 100px;
+    text-align: right;
+    float: left;
+    clear: both;
+    margin-bottom: 3px;
+}
+
+.detail-value {
+    float: left;
+    margin-left: 7px;
+}
+
+.details header, .team-details header {
+    font-size: 1.2em;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    float: left;
+    clear: both;
+    margin-right: 3px;
+    margin-bottom: 1px;
+}
+
+.legend-span {
+    float: left;
+    height: 10px;
+}
+
+.team-selection {
+    margin-bottom: 10px;
+}
+
+path.wins, .legend-color.wins, .chart .wonBar {
+    fill: darkolivegreen;
+    background-color: darkolivegreen;
+}
+
+path.losses, .legend-color.losses, .chart .lostBar {
+    fill: darkseagreen;
+    background-color: darkseagreen;
+}
+
+path.draws, .legend-color.draws, .chart .drawBar {
+    fill: lightgray;
+    background-color: lightgray;
+    color: dimgray;
+}
+
+path.home, .legend-color.home {
+    fill: royalblue;
+    background-color: royalblue;
+}
+
+path.away, .legend-color.away {
+    fill: orangered;
+    background-color: orangered;
+}
+
+.no-title .ui-dialog-titlebar {
+    display: none;
+}

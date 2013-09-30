@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <title></title>
+    <link href="css/charts.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+    <script src="modules/services.js"></script>
+    <script src="modules/directives/directives.js"></script>
+    <script src="modules/directives/charts.js"></script>
+    <script src="js/default.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+    <header class="team-selection">
+        <div data-team-selector="teams" data-selected-team="selectedTeam"></div>
+        <div data-filter-selector data-filters="filters" data-filter-changed="filterChanged(filterName)"></div>
+        <!--        <input type="checkbox" id="filterButton" ng-click="showFilters()" /><label id="filterButtonLabel" for="filterButton" class="filter-button">filters</label>
+        <div id="filterDialog">
+        </div>-->
+    </header>
+
+    <section class="team-details" ng-show="totalRecordData.data.length">
+        <section class="team-stats">
+            <header>
+                <div class="detail-label">team details:</div>
+                <span class="detail-value" ng-bind="selectedTeam"></span>
+            </header>
+            <div class="detail-container">
+                <div class="detail-label">matches recorded:</div>
+                <span class="detail-value" ng-bind="matchTotal"></span>
+                <div class="detail-label">avg win spread:</div>
+                <span class="detail-value" ng-bind="totalAvgWinScore"></span>
+                <div class="detail-label">avg loss spread:</div>
+                <span class="detail-value" ng-bind="totalAvgLossScore"></span>
+            </div>
+        </section>
+        <section class="pie-container">
+            <div pie-chart data-game-data="totalRecordData" data-options="totalRecordOptions"></div>
+        </section>
+        <div data-segmented-bar-chart="winLossData" data-selected-matchup="selectedMatchup"></div>
+    </section>
+    <div data-matchup-details="selectedMatchup"></div>
+</body>
+</html>

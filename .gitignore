@@ -1,1 +1,7 @@
-*~
+public/Web*
+public/Properties/*
+public/bin/*
+public/obj/*
+*.sln
+*.suo
+*csproj*

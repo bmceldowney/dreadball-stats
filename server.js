@@ -11,9 +11,9 @@ app.use(express.logger());
 app.use(app.router); //use both root and other routes below
 app.use(express.static(__dirname + '/public')); //use static files in ROOT/public folder
 
-app.get("/", function(request, response){
-	response.send('The service');
-});
+// app.get("/", function(request, response){
+	// response.send('The service');
+// });
 
 app.get("/games", function(request, response){
     response.json(records);
