@@ -1,19 +1,18 @@
-var records = [];
-var host = "127.0.0.1";
-var port = process.env.PORT || 8080;
 var express = require("express");
 var request = require('request');
 var csv = require('csv');
 
+var records = [];
+var zippedRecords;
+var host = "127.0.0.1";
+var port = process.env.PORT || 8080;
+
 var app = express();
 
 app.use(express.logger());
+app.use(express.compress());
 app.use(app.router); //use both root and other routes below
 app.use(express.static(__dirname + '/public')); //use static files in ROOT/public folder
-
-// app.get("/", function(request, response){
-	// response.send('The service');
-// });
 
 app.get("/games", function(request, response){
     response.json(records);

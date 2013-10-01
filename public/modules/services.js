@@ -29,6 +29,8 @@ angular.module('services').service('dataService', function ($http) {
         $http.get('games').success(function (results) {
             data = results;
             cb();
+        }).error(function (results) {
+
         });
     }
 

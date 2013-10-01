@@ -20,14 +20,6 @@ angular.module('directives').directive('filterSelector', function (filterService
                          //.attr('name', 'radio')
                         .on('click', function (e) {
                             filterService.setFilter(this.id);
-                            //var filter = scope.filters.filter(function (item) {
-                            //    return item.name === this.id
-                            //}.bind(this))[0];
-
-                            //filter.active = !filter.active;//$(this).hasClass('ui-state-active');
-                            //scope.$apply();
-
-                            //scope.filterChanged({ filterName: this.id })
                         });
 
                     var label = $(document.createElement('label'))
