@@ -1,6 +1,6 @@
 ﻿angular.module('directives', ['services']);
 
-angular.module('directives').directive('filterSelector', function (filterService) {
+angular.module('directives').directive('filterSelector', ['filterService', function (filterService) {
     return {
         templateUrl: 'templates/filterSelector.html',
         scope: {
@@ -35,7 +35,7 @@ angular.module('directives').directive('filterSelector', function (filterService
             })
         }
     };
-});
+}]);
 
 angular.module('directives').directive('matchupDetails', function () {
     return {

@@ -14,7 +14,7 @@ angular.module('services').service('filterService', function () {
     return retval;
 });
 
-angular.module('services').service('dataService', function ($http) {
+angular.module('services').service('dataService', ['$http', function ($http) {
     var retval = {};
     var teams = 'veermyn orxgoblins corporation robot zzor female judwan forgefathers asterians nameless teratons zees'.split(' ').sort();
     var data;
@@ -125,4 +125,4 @@ angular.module('services').service('dataService', function ($http) {
     }
 
     return retval;
-});
+}]);

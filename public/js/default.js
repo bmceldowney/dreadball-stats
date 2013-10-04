@@ -1,6 +1,6 @@
 ﻿angular.module('app', ['directives', 'services']);
 
-angular.module('app').controller('MainCtrl', function ($scope, dataService, filterService) {
+angular.module('app').controller('MainCtrl', ['$scope', 'dataService', 'filterService', function ($scope, dataService, filterService) {
 
     dataService.getData(dataRetrieved);
 
@@ -95,4 +95,4 @@ angular.module('app').controller('MainCtrl', function ($scope, dataService, filt
             ]
         }
     }
-});
+}]);
