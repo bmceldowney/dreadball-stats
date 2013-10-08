@@ -73,6 +73,7 @@ angular.module('app').controller('MainCtrl', ['$scope', 'dataService', 'filterSe
             });
 
             $scope.matchTotal = $scope.winTotal + $scope.lossTotal + $scope.drawTotal;
+            if (!$scope.matchTotal) return;
 
             var matchupsWithWins = $scope.winLossData.filter(function (item) { return item.data.avgWinScore; });
             if (matchupsWithWins.length) {
