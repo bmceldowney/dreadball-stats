@@ -5,3 +5,4 @@ public/obj/*
 *.sln
 *.suo
 *csproj*
+node_modules
